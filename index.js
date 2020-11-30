@@ -3,11 +3,11 @@ const express = require('express');
 const app = express();
 
 const port = 8080;
-
+const expressLayouts = require('express-ejs-layouts');
 
 // use express router
 const indexRouter = require('./routes/index');
-
+app.use(expressLayouts);
 app.use('/',indexRouter);
 app.set('view engine','ejs');
 app.set('views','./views');
