@@ -4,6 +4,12 @@ const app = express();
 
 const port = 8000;
 
+
+// use express router
+const indexRouter = require('./routes/index');
+
+app.use('/',indexRouter);
+
 app.listen(port,(err)=>{
     if(err)
     {
