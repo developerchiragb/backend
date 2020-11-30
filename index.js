@@ -9,7 +9,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 // use express router
 const indexRouter = require('./routes/index');
-
+const db = require('./config/mongoose');
 
 app.use(expressLayouts);
 
