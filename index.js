@@ -16,7 +16,7 @@ app.use(expressLayouts);
 //extract style and scripts from sub pages into the layout 
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
-
+app.use(express.urlencoded());
 app.use('/',indexRouter);
 app.set('view engine','ejs');
 app.set('views','./views');
