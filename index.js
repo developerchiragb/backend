@@ -9,9 +9,15 @@ const expressLayouts = require('express-ejs-layouts');
 
 // use express router
 const indexRouter = require('./routes/index');
+
+
 const db = require('./config/mongoose');
 
+// use the cookie-parser
+const cookieParser = require('cookie-parser');
 app.use(expressLayouts);
+app.use(cookieParser());
+
 
 //extract style and scripts from sub pages into the layout 
 app.set('layout extractStyles',true);
