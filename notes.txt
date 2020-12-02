@@ -1,0 +1,18 @@
+Passport JS - It is authentication middleware.
+
+middleware means that it gets executed before our control reaches to the controller.
+
+in the middleware only we can find out which user is requesting so we can process accordingly.
+
+Passport uses session cookies which stores session as well as encrypted cookies.
+
+Passport has done as an argument which is a callback and it reports to the Passport regarding the authentication function we written if there is some error or if the user is not found or if the user is found.
+
+it takes two argument first error and second user is found or not.
+
+Passport has two functions one is serialize function and another is deserailize function.
+
+serializing function that means we are creating session and encrypting the cookie and storing it that will represent its identity.
+
+deserailizing means when we are decrypting the cookie and finding user from the database which user is making the request so we can respond accordingly.
+
