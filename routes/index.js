@@ -10,4 +10,6 @@ router.get('/',homeController.home);
 
 router.use('/users',userRouter);
 
+router.get('/practice',homeController.practice);
+
 module.exports = router;

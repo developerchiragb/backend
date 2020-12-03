@@ -16,3 +16,52 @@ serializing function that means we are creating session and encrypting the cooki
 
 deserailizing means when we are decrypting the cookie and finding user from the database which user is making the request so we can respond accordingly.
 
+SASS -> Syntactically Awesome Style Sheets 
+We will use node-sass-middleware to use sass in our node application.
+SASS vs SCSS ->
+Two different way of writing.
+
+SCSS is the most commonly used one and SASS is the indentent syntax of SCSS.
+
+<div>
+    <p>
+        <a>
+        </a>
+    </p>
+</div>
+In CSS syntax -->
+div p a
+{
+
+}
+div p 
+{
+
+}
+In SASS -->
+div 
+style for div
+    p
+    Style for div
+        a
+        Style for div
+In SCSS -->
+div {
+    style for div if required.
+    p
+    {
+        style for p if required.
+        a
+        {
+            style for a if required.
+
+        }
+    }
+}
+
+at last SASS and SCSS will be converted to CSS only because our broweser only understand CSS but we good a good way of writing CSS using SASS and SCSS.
+
+It converts the scss in to css precompile those files.
+whenever i run the server convert all the files of scss in to css and place them in a folder.
+because when the page will load and at that time if the files will get compiled then it will lot of time to page to load therfore we are doing the time of server start.
+

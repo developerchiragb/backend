@@ -8,6 +8,14 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocal = require("./config/passport-local-strategy");
 const MongoStore = require('connect-mongo')(session); // session as an argument because it is storing the session
+const sassMiddleware = require('node-sass-middleware');
+app.use(sassMiddleware({
+  src:'assets/scss',
+  debug:true,
+  dest:'assets/css',
+  outputStyle:'expanded',
+  prefix:'/css'
+}))
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static("./assets"));

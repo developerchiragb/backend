@@ -8,6 +8,6 @@ module.exports.home = (req,res)=>{
 }
 
 module.exports.practice = (req,res)=>{
-    return res.end('<h1> Hi! I am Practice Page </h1>');
+    return res.render('practice',{title:"Codeial | Practice"})
 }
 

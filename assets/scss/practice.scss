@@ -1,0 +1,50 @@
+
+/* scss */
+body {
+    margin: 0px;
+    background-color: rgb(54, 25, 182);
+    #header {
+      height: 5vh;
+      width: 100vw;
+      background-color: wheat;
+      display: flex;
+      flex-direction: left;
+      div {
+        margin: 10px;
+         a {
+          text-decoration: none;
+          color: black;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      a:hover {
+          color: orange;
+          border-bottom: 1px solid wheat;
+        }
+      }
+    }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    height: 5vh;
+    width: 100vw;
+    background-color: wheat;
+    display: flex;
+    flex-direction: row;
+    div {
+      margin: 10px;
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+      a:hover {
+        color: orange;
+        border-bottom: 1px solid wheat;
+      }
+    }
+  }
+
+}

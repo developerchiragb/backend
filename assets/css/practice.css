@@ -1,0 +1,55 @@
+/* scss */
+body {
+  margin: 0px;
+  background-color: #3619b6;
+}
+
+body #header {
+  height: 5vh;
+  width: 100vw;
+  background-color: wheat;
+  display: flex;
+  flex-direction: left;
+}
+
+body #header div {
+  margin: 10px;
+}
+
+body #header div a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+body #header div a:hover {
+  color: orange;
+  border-bottom: 1px solid wheat;
+}
+
+body #footer {
+  position: absolute;
+  bottom: 0;
+  height: 5vh;
+  width: 100vw;
+  background-color: wheat;
+  display: flex;
+  flex-direction: row;
+}
+
+body #footer div {
+  margin: 10px;
+}
+
+body #footer div a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+body #footer div a:hover {
+  color: orange;
+  border-bottom: 1px solid wheat;
+}

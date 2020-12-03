@@ -1,9 +1,15 @@
-<form action="/users/create-session" method="POST">
-    Email: <input type="text" name="email" required>
-    Password: <input type="text" name="password" required>
-    <p></p>
-    <p></p>
-    <button type="submit">Sign In</button>
-    <p></p>
-    
-</form>
+<link rel="stylesheet" href="/css/sign_in_sign_out.css">
+<div id="sign-in-form">
+    <form action="/users/create-session" method="POST">
+        <div id="email">
+        <input type="text" name="email" id="email" required placeholder="Enter Email">
+        </div>
+        <div id="password">
+        <input type="text" name="password" id="password" required placeholder="Enter Password">
+        </div>
+        <button type="submit">Log In</button>
+        
+        
+    </form>
+</div>
+
