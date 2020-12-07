@@ -1,11 +1,12 @@
 body #footer {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   height: 5vh;
   width: 100vw;
   background-color: wheat;
   display: flex;
   flex-direction: row;
+  margin-top: 12rem;
 }
 
 body #footer div {

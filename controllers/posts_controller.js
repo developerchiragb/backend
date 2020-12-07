@@ -1,5 +1,6 @@
 const Posts = require('../models/post');
-
+const Comment = require('../models/comment');
+const User = require('../models/User');
 module.exports.create = (req,res)=>{
     
 
@@ -18,6 +19,28 @@ module.exports.create = (req,res)=>{
         return res.redirect('/');
         }
     })
+}
+
+module.exports.addComment = (req,res)=>{
+    console.log(req.user)
+    Comment.create({
+        content:req.body.content,
+        user:req.user._id,
+        
+        posts:post._id
+    },(err,comment)=>{
+        if(err)
+        {
+            console.log("Error adding comments to the database");
+            return;
+        }
+        else 
+        {
+            return res.redirect('/');
+        }
+    })
+
+
 }
     
 
