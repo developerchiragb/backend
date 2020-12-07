@@ -1,4 +1,5 @@
 const passport = require("passport");
+const Post = require("../models/post");
 const User = require("../models/User");
 const LocalStrategy = require("passport-local").Strategy;
 
@@ -61,6 +62,17 @@ passport.setAuthenticatedUser = (req, res, next) => {
   
 
 };
+
+// passport.postCheck = (req,res,next)=>{
+//   if(req.isAuthenticated())
+//   {
+//     next();
+//   }
+//   else 
+//   {
+//     return res.redirect('/',{title:"Codeial | Home"})
+//   }
+// }
 
 
 module.exports = passport;
