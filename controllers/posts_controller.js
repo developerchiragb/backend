@@ -1,6 +1,7 @@
 const Posts = require('../models/post');
 const Comment = require('../models/comment');
 const User = require('../models/User');
+const Post = require('../models/post');
 module.exports.create = (req,res)=>{
     
 
@@ -39,8 +40,26 @@ module.exports.addComment = (req,res)=>{
             return res.redirect('/');
         }
     })
-
-
 }
-    
+
+module.exports.destroy = (req,res)=>
+{
+    Post.findById(req.params.id,(err,post)=>
+    {
+        console.log(post.user);
+        console.log(req.user.id);
+        if(post.user == req.user.id) // check who is deleting the post is the owner of the post.
+        {
+            post.remove();
+            Comment.deleteMany({post:req.params.id},(err)=>{
+                return res.redirect('back');
+            })
+            
+        }
+        else
+        {
+            return res.redirect('back');
+        }
+    })
+}
 

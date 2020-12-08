@@ -2,8 +2,22 @@ const User = require("../models/User");
 const passport = require('passport')
 const passportLocal = require('../config/passport-local-strategy');
 module.exports.profile = (req, res) => {
-  return res.render("user_profile", { title: "Codeial | Profile Page" });
+  User.findById(req.params.id,(err,user)=>{
+    return res.render("user_profile", { title: "Codeial | Profile Page",profile_user:user });
+  })
+  
 };
+
+module.exports.checkProfile = (req,res)=>{
+  if(locals.user)
+  {
+    return res.redirect(`/users/profile/${locals.user.id}`);
+  }
+  else 
+  {
+    return res.redirect('/');
+  }
+}
 
 module.exports.posts = (req, res) => {
   return res.end("<h1> I am a Post Page </h1>");
@@ -14,9 +28,10 @@ module.exports.signUp = (req, res) => {
 };
 
 module.exports.signIn = (req, res) => {
-  if(req.isAuthenticated())
+  if(req.params.id)
   {
-      return res.redirect('/users/profile');
+      
+      return res.redirect(`/users/profile/${req.params.id}`);
   }
   return res.render("user_sign_in", { title: "Codieal | Sign In Page" });
 };
@@ -55,4 +70,17 @@ module.exports.createSession = (req, res) => {
 module.exports.signOut = (req,res)=>{
     req.logout();
     return res.redirect('/');
+}
+
+module.exports.update = (req,res)=>{
+  if(req.user.id == req.params.id)
+  {
+    User.findByIdAndUpdate(req.params.id,req.body,(err,user)=>{
+      return res.redirect('/');
+    });
+  }
+  else
+  {
+    return res.status(401).send('Unauthorized');
+  }
 }

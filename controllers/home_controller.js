@@ -11,16 +11,13 @@ module.exports.home = (req,res)=>{
         }
     })
     .exec((err,posts)=>{
-            if(err)
-            {
-                console.log(`Error in finding posts from the database: ${err}`);
-                return;
-            }
-            else
-            {
-                return res.render('home',{title:"Codeial | Home",posts:posts})
-            }
-        })
+            User.find({},function(err,users){
+            return res.render('home',{title:"Codeial | Home",posts:posts,all_users:users})
+            
+            });
+        
+            
+        });
     }
 
         
